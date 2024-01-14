@@ -13,7 +13,7 @@
   <h3 align="center">Football Position Predict End to End ML Project</h3>
   
 [![LinkedIn Badge](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&labelColor=0077B5&logo=LinkedIn&logoColor=white&link=www.linkedin.com/in/gözde-ceren-yıldız
-)](www.linkedin.com/in/gözde-ceren-yıldız) 
+)](https://www.linkedin.com/in/g%C3%B6zde-ceren-y%C4%B1ld%C4%B1z/)
 
 
   <p align="center">
