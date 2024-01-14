@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Predictor</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="background-container" style="position: fixed; top:0; left: 0; width: 100vw; height: 100vh; z-index: -1; background-image: url('https://wallup.net/wp-content/uploads/2018/03/19/587183-Anfield_Road-Liverpool_FC-Liverpool-stadium-soccer.jpg')"></div>
+        <h1>Football Player Position Model</h1>
+
+        <!-- Tab Butonları -->
+        <div class="tab-buttons">
+            <button class="tab-button" onclick="showTab('pace')">Pace</button>
+            <button class="tab-button" onclick="showTab('shooting')">Shooting</button>
+            <button class="tab-button" onclick="showTab('passing')">Passing</button>
+            <button class="tab-button" onclick="showTab('dribbling')">Dribbling</button>
+            <button class="tab-button" onclick="showTab('defending')">Defending</button>
+            <button class="tab-button" onclick="showTab('physicality')">Physicality</button>
+            <button class="tab-button" onclick="showTab('additional_info')">Additional Information</button>
+        </div>
+    
+    <form action="/position_predict" method="post">
+        <!-- Pace Sekmesi -->
+        <div class="tab-content" id="pace-tab">
+            
+               
+                Acceleration  <input type="number" name="Acceleration" step="any" required>
+                Sprint_Speed  <input type="number" name="Sprint_Speed" step="any" required>
+                <button type="submit">Predict</button>
+            
+        </div>
+
+        <!-- Shooting Sekmesi -->
+        <div class="tab-content" id="shooting-tab">
+            
+                Positioning  <input type="number" name="Positioning" step="any" required>
+                Finishing  <input type="number" name="Finishing" step="any" required>
+                Shot_Power  <input type="number" name="Shot_Power" step="any" required>
+                Long_Shots  <input type="number" name="Long_Shots" step="any" required>
+                Volleys  <input type="number" name="Volleys" step="any" required>
+                Penalties  <input type="number" name="Penalties" step="any" required>
+                <button type="submit">Predict</button>
+            
+        </div>
+
+        <!-- Passing Sekmesi -->
+        <div class="tab-content" id="passing-tab">
+            
+
+                Vision  <input type="number" name="Vision" step="any" required>
+                Crossing  <input type="number" name="Crossing" step="any" required>
+                Free_Kick_Accuracy  <input type="number" name="Free_Kick_Accuracy" step="any" required>
+                Shot_Passing  <input type="number" name="Shot_Passing" step="any" required>
+                Long_Passing  <input type="number" name="Long_Passing" step="any" required>
+                Curve  <input type="number" name="Curve" step="any" required>
+                <button type="submit">Predict</button>
+            
+        </div>
+
+        <!-- Dribbling Sekmesi -->
+        <div class="tab-content" id="dribbling-tab">
+            
+
+                Agility  <input type="number" name="Agility" step="any" required>
+                Balance  <input type="number" name="Balance" step="any" required>
+                Reactions  <input type="number" name="Reactions" step="any" required>
+                Ball_Control  <input type="number" name="Ball_Control" step="any" required>
+                Detailed_Dribbling  <input type="number" name="Detailed_Dribbling" step="any" required>
+                Composure  <input type="number" name="Composure" step="any" required>
+                <button type="submit">Predict</button>
+            
+        </div>
+
+        <!-- Defending Sekmesi -->
+        <div class="tab-content" id="defending-tab">
+            
+
+                Interception  <input type="number" name="Interception" step="any" required>
+                Heading_Accuracy  <input type="number" name="Heading_Accuracy" step="any" required>
+                Def_Awareness  <input type="number" name="Def_Awareness" step="any" required>
+                Standing_Tackle  <input type="number" name="Standing_Tackle" step="any" required>
+                Sliding_Tackle  <input type="number" name="Sliding_Tackle" step="any" required>
+                <button type="submit">Predict</button>
+            
+        </div>
+
+        <!-- Physicality Sekmesi -->
+        <div class="tab-content" id="physicality-tab">
+           
+
+                Jumping  <input type="number" name="Jumping" step="any" required>
+                Stamina  <input type="number" name="Stamina" step="any" required>
+                Strength  <input type="number" name="Strength" step="any" required>
+                Aggression  <input type="number" name="Aggression" step="any" required>
+                <button type="submit">Predict</button>
+            
+        </div>
+        
+        <div class="tab-content" id="additional_info-tab">
+            
+            <label for="Att_Work_Rate">Att_Work_Rate:</label>
+            <select name="Att_Work_Rate" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        
+            <label for="Def_Work_Rate">Def_Work_Rate:</label>
+            <select name="Def_Work_Rate" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            
+            </select>
+        
+            <label for="Foot">Foot:</label>
+            <select name="Foot" required>
+                <option value="Left">Left</option>
+                <option value="Right">Right</option>
+            </select>
+            Age  <input type="number" name="Age" step="any" required>
+            <button type="submit">Predict</button>
+        
+        </div>
+        <div class="result">
+            {% if result %}
+                <p id="result-text">Prediction Result: {{ result }}</p>
+            {% endif %}
+        </div>
+    </form>
+    </div>
+</div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>

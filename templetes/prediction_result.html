@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .result {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #prediction-result::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #result-text {
+            margin: 0;
+        }
+
+        /* Add specific background image if result is "Kaleci" */
+        #prediction-result[data-position="Kale"]::before {
+            background-image: url('https://img.freepik.com/free-photo/soccer-players-action-professional-stadium_654080-1261.jpg?w=1060&t=st=1704890743~exp=1704891343~hmac=04600852b59f180763eb2a2e0fa7f1062ab76a00d827c5a4ee89c0108397db5f');
+        }
+        #prediction-result[data-position="Hücum Hattı"]::before {
+            background-image: url('https://img.freepik.com/free-photo/soccer-players-action-professional-stadium_654080-1167.jpg?w=1060&t=st=1704890901~exp=1704891501~hmac=b3f4a43c1d3c6c9e8a31d3b83116cfa058b317f84ef3df2653162a645896da54');
+        }
+        #prediction-result[data-position="Defans"]::before {
+            background-image: url('https://img.freepik.com/free-photo/soccer-players-action-professional-stadium_654080-1243.jpg?w=1060&t=st=1704890890~exp=1704891490~hmac=b1ccb33b900ee5cc954ba18b390631eb63c365343fe7c96a8ec3544030303025');        
+        }
+        #prediction-result[data-position="Orta Saha"]::before {
+            background-image: url('https://img.freepik.com/free-photo/football-stadium-night-generative-ai_260559-480.jpg?w=740&t=st=1704890948~exp=1704891548~hmac=e435dc121ab37d40509634d966d144426840756cfcf99187690d66128664f543');
+        }
+
+
+            
+    </style>
+</head>
+<body>
+
+    <div class="result" id="prediction-result" data-position="{% if result %}{{ result }}{% endif %}">
+        {% if result %}
+            <p id="result-text">Prediction Result: {{ result }}</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
+
+</html>

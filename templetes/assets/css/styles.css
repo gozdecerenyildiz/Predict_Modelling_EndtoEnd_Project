@@ -1,0 +1,88 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.tab-content {
+    display: none;
+}
+
+.result {
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    background-image: url('assets/images/foto4.png'); /* Arka plan resminin URL'sini ekleyin */
+    background-size: cover;
+    background-position: center;
+    color: #0c0b0bec; /* Yazı rengini belirtin, arka plana uyumlu olmalı */
+}
+
+.container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.container:hover h1 {
+    color: #e74c3c;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    background-color: #eeecf1;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.result {
+    margin-top: 20px;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 20px;
+    }
+}
