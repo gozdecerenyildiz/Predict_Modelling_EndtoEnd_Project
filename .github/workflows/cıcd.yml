@@ -42,7 +42,7 @@ jobs:
     - name: Deploy to Cloud Run
       run: |
         gcloud run deploy fastapi \
-        --image=us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/mlops/fastapi:latest \
+        --image=us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/project3/fastapi:latest \
         --allow-unauthenticated \
         --port=8080 \
         --service-account=${{ secrets.SERVICE_ACCOUNT }} \
