@@ -1,6 +1,6 @@
 # Predict_Modelling_EndtoEnd_Project
 
-# ISTDSA DS'Eylul 3rd Project: A Multi-Classification Model
+# ISTDSA DS'Eylul 3rd Project: End to End MLOps Project / Football Position Prediction Model FastAPI Model Deployment
 [![Product Name Screen Shot][product-screenshot]]([https://fastapi2-74557owg3a-uc.a.run.app/](https://fastapi-xv4sablhwq-uc.a.run.app/index.html))
 
 <!-- PROJECT LOGO -->
